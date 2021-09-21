@@ -92,15 +92,25 @@ int main(int argc, char** argv)
         memcpy((void *)Ycopy, (const void *)Y, sizeof(double)*n);
 
         // insert start timer code here
+    std::chrono::time_point<std::chrono::high_resolution_clock> start_time = std::chrono::high_resolution_clock::now();
+       
 
-        // call the method to do the work
+    // call the method to do the work
         my_dgemv(n, A, X, Y); 
 
         // insert end timer code here
+    std::chrono::time_point<std::chrono::high_resolution_clock> end_time = std::chrono::high_resolution_clock::now();
 
+        std::chrono::duration<double> elapsed = end_time - start_time;
+    std::cout << " Elapsed time is : " << std::setprecision(10) <<elapsed.count() << " " << std::endl;
 
         // now invoke the cblas method to compute the matrix-vector multiplye
-        reference_dgemv(n, Acopy, Xcopy, Ycopy);
+        std::chrono::time_point<std::chrono::high_resolution_clock> start_time1 = std::chrono::high_resolution_clock::now();       
+    reference_dgemv(n, Acopy, Xcopy, Ycopy);
+        std::chrono::time_point<std::chrono::high_resolution_clock> end_time1 = std::chrono::high_resolution_clock::now();
+
+        std::chrono::duration<double> elapsed1 = end_time1 - start_time1;
+    std::cout << " Elapsed CBLAS time is : " << std::setprecision(10) << elapsed1.count() << " " << std::endl;
 
         // compare your result with that computed by BLAS
         if (check_accuracy(Ycopy, Y, n) == false)

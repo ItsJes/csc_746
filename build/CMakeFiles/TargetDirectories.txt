@@ -1,0 +1,6 @@
+/global/homes/i/itsjes/vmmul-harness-instructional/build/CMakeFiles/edit_cache.dir
+/global/homes/i/itsjes/vmmul-harness-instructional/build/CMakeFiles/benchmark-openmp.dir
+/global/homes/i/itsjes/vmmul-harness-instructional/build/CMakeFiles/benchmark-blas.dir
+/global/homes/i/itsjes/vmmul-harness-instructional/build/CMakeFiles/benchmark.dir
+/global/homes/i/itsjes/vmmul-harness-instructional/build/CMakeFiles/rebuild_cache.dir
+/global/homes/i/itsjes/vmmul-harness-instructional/build/CMakeFiles/benchmark-basic.dir
